@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 ### This document contains further discussion on the theory of operation for the FPGA MIDI Controller project. For an overview of the project or an understanding of how to implement it yourself, please see the README. 
 
-##Project Overview 
+###Project Overview 
 * This project contains the source code which allows for a fully-functional, polyphonic MIDI keyboard connected to an FPGA with an audio output. 
 * The appendices.pdf contains block diagrams of the logic and state diagrams which served as the logical basis for the VHDL written. 
 * This project was implemented on a Basys3 FPGA in Xilinx Vivado 2018
