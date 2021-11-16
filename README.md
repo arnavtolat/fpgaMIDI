@@ -58,10 +58,9 @@ Basys3 port JA
   d. Connect the speaker’s AUX input to the AUX port on the AMP2 adapter
     i. The data output to a speaker connected to Pmod DA2 by way of the DA2 to AMP2 adapter and AMP2 is represented by v_out on the block diagram.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 If these instructions are followed correctly, the user should expect to hear a sound once a key is pressed on the MIDI keyboard. The user should also see the value of the key they are pressing on the Basys3’s 7-segment display. If the user pressed multiple keys at the same time, the user should expect to see the value of the highest key which they press, and expect to hear a polyphonic “chord” sound consisting of the sounds of the keys which they pressed in unison.
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- LICENSE -->
 ## License
