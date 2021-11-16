@@ -1,18 +1,18 @@
 <!-- ABOUT THE PROJECT -->
 ### This document contains further discussion on the theory of operation for the FPGA MIDI Controller project. For an overview of the project or an understanding of how to implement it yourself, please see the README. 
 
-###Project Overview 
+##Project Overview 
 * This project contains the source code which allows for a fully-functional, polyphonic MIDI keyboard connected to an FPGA with an audio output. 
 * The appendices.pdf contains block diagrams of the logic and state diagrams which served as the logical basis for the VHDL written. 
 * This project was implemented on a Basys3 FPGA in Xilinx Vivado 2018
 
-### Built With
+## Built With
 
 * [VHDL](https://www.seas.upenn.edu/~ese171/vhdl/vhdl_primer.html) - The VHSIC Hardware Description Language is a hardware description language that can model the behavior and structure of digital systems at multiple levels of abstraction, ranging from the system level down to that of logic gates, for design entry, documentation, and verification purposes
 * [Xilinx Vivado](https://www.xilinx.com/support/download.html) - Vivado Design Suite is a software suite produced by Xilinx for synthesis and analysis of HDL design
 
-### Project Overview 
-[Please see README for Overview](https://github.com/arnavtolat/Midi-Keyboard-VHDL/blob/22cc481082bb61794425cf64bf8b394caf01a1cf/README.md)
+## Introduction + Implementation Instructions 
+[Please see README](https://github.com/arnavtolat/Midi-Keyboard-VHDL/blob/22cc481082bb61794425cf64bf8b394caf01a1cf/README.md)
 
 ## Theory of Operation
 
