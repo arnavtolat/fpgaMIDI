@@ -4,21 +4,17 @@
 ## Project Overview 
 * This project contains the source code which allows for a fully-functional, polyphonic MIDI keyboard connected to an FPGA with an audio output. 
 * The appendices.pdf contains block diagrams of the logic and state diagrams which served as the logical basis for the VHDL written. 
-* This project was implemented on a Basys3 board with an Artix-7 FPGA. Simulations and synthesis were completed in Xilinx Vivado 2018
+* This project was implemented on the [Diligent Basys 3](https://digilent.com/shop/basys-3-artix-7-fpga-trainer-board-recommended-for-introductory-users/) board, which has an Artix-7 FPGA and functioned as a MIDI controller for the keyboard
+* Simulations and synthesis were completed in Xilinx Vivado 2018
 
 ## Built With
 
 * [VHDL](https://www.seas.upenn.edu/~ese171/vhdl/vhdl_primer.html) - The VHSIC Hardware Description Language is a hardware description language that can model the behavior and structure of digital systems at multiple levels of abstraction, ranging from the system level down to that of logic gates, for design entry, documentation, and verification purposes
-* [Xilinx Vivado](https://www.xilinx.com/support/download.html) - Vivado Design Suite is a software suite produced by Xilinx for synthesis and analysis of HDL design
-* [Diligent Basys 3 Artix-7 FPGA](https://digilent.com/shop/basys-3-artix-7-fpga-trainer-board-recommended-for-introductory-users/) - the FPGA board which was used as a MIDI controller with the keyboard
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+* [Xilinx Vivado](https://www.xilinx.com/support/download.html) - Vivado Design Suite is a software suite produced by Xilinx for synthesis and analysis of HDL design. 
 
 ## Project Introduction
 
 The project seeks to create a system which accurately takes the digital inputs from a MIDI keyboard and successfully allows for monophonic and polyphonic sound output. More specifically, we create a system which can take in a three byte digital input from a MIDI keyboard, generated upon key-press and key-release on the keyboard, and use it to generate sine waves corresponding to the notes played. These sine waves, inputted and interpreted one at a time, create monophonic sound. Once summed and normalized, the sine waves generate polyphonic sound, allowing users of the system to play chords.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Specifications
 
