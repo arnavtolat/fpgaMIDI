@@ -3,7 +3,7 @@
 
 ## Project Overview 
 * This project contains the source code which allows for a fully-functional, polyphonic MIDI keyboard connected to an FPGA with an audio output. 
-* The fpgaMIDI-appendices.pdf contains block diagrams of the logic and state diagrams which served as the logical basis for the VHDL written. 
+* The fpgaMIDI-appendices.pdf contains block diagrams of the logic and state diagrams which served as the logical basis for the VHDL code written. 
 * This project was implemented on the [Diligent Basys 3](https://digilent.com/shop/basys-3-artix-7-fpga-trainer-board-recommended-for-introductory-users/) board, which has an Artix-7 FPGA and functioned as a MIDI controller for the keyboard
 * Simulations and synthesis were completed in Xilinx Vivado 2018
 
