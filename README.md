@@ -1,16 +1,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project: FPGA MIDI Controller
 
-Project Overview 
+## Project Overview 
 * This project contains the source code which allows for a fully-functional, polyphonic MIDI keyboard connected to an FPGA with an audio output. 
-* The appendices.pdf contains block diagrams of the logic and state diagrams which served as the logical basis for the VHDL written. All references to the appendix refer to labeled figures in this file. 
-* This project was implemented on a Basys3 FPGA in Xilinx Vivado 2018
+* The appendices.pdf contains block diagrams of the logic and state diagrams which served as the logical basis for the VHDL written. 
+* This project was implemented on a Basys3 board with an Artix-7 FPGA. Simulations and synthesis were completed in Xilinx Vivado 2018
 
-### Built With
+## Built With
 
 * [VHDL](https://www.seas.upenn.edu/~ese171/vhdl/vhdl_primer.html) - The VHSIC Hardware Description Language is a hardware description language that can model the behavior and structure of digital systems at multiple levels of abstraction, ranging from the system level down to that of logic gates, for design entry, documentation, and verification purposes
 * [Xilinx Vivado](https://www.xilinx.com/support/download.html) - Vivado Design Suite is a software suite produced by Xilinx for synthesis and analysis of HDL design
-
+* [Diligent Basys 3 Artix-7 FPGA](https://digilent.com/shop/basys-3-artix-7-fpga-trainer-board-recommended-for-introductory-users/) - the FPGA board which was used as a MIDI controller with the keyboard
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -60,10 +60,13 @@ If these instructions are followed correctly, the user should expect to hear a s
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Further notes on logic and theory of operation
+[MD file discussing theory of operation](https://github.com/arnavtolat/Midi-Keyboard-VHDL/blob/8ed1f8e4c99e7acc957e1640ea124984225c5074/theoryOfOperation.md)
+
 <!-- LICENSE -->
 ## License
 
-Distributed under the GNU Affero General Public License v3.0 License. See `LICENSE.txt` for more information.
+Distributed under the GNU Affero General Public License v3.0 License. See `LICENSE.txt` for more information, and contact me if you have any questions. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
