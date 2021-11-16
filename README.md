@@ -60,8 +60,8 @@ If these instructions are followed correctly, the user should expect to hear a s
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Further notes on logic and theory of operation
-[MD file discussing theory of operation](https://github.com/arnavtolat/Midi-Keyboard-VHDL/blob/8ed1f8e4c99e7acc957e1640ea124984225c5074/theoryOfOperation.md)
+## Further notes on this project's High-Level Logic and Theory of Operation
+[Notes on Theory of Operation](https://github.com/arnavtolat/Midi-Keyboard-VHDL/blob/8ed1f8e4c99e7acc957e1640ea124984225c5074/theoryOfOperation.md)
 
 <!-- LICENSE -->
 ## License
