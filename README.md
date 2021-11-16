@@ -1,5 +1,5 @@
 <!-- ABOUT THE PROJECT -->
-## About The MIDI Keyboard on FPGA Project
+## About The Project: FPGA MIDI Controller
 
 Project Overview 
 * This project contains the source code which allows for a fully-functional, polyphonic MIDI keyboard connected to an FPGA with an audio output. 
