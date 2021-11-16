@@ -1,7 +1,5 @@
 <!-- ABOUT THE PROJECT -->
-### This document contains further discussion on the theory of operation for this project. For an overview of the project or an understanding of how to implement it yourself, please see the README. 
-
-## About The Project: FPGA MIDI Controller
+### This document contains further discussion on the theory of operation for the FPGA MIDI Controller project. For an overview of the project or an understanding of how to implement it yourself, please see the README. 
 
 Project Overview 
 * This project contains the source code which allows for a fully-functional, polyphonic MIDI keyboard connected to an FPGA with an audio output. 
