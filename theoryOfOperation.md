@@ -1,4 +1,6 @@
 <!-- ABOUT THE PROJECT -->
+### This document contains further discussion on the theory of operation for this project. For an overview of the project or an understanding of how to implement it yourself, please see the README. 
+
 ## About The Project: FPGA MIDI Controller
 
 Project Overview 
@@ -11,6 +13,8 @@ Project Overview
 * [VHDL](https://www.seas.upenn.edu/~ese171/vhdl/vhdl_primer.html) - The VHSIC Hardware Description Language is a hardware description language that can model the behavior and structure of digital systems at multiple levels of abstraction, ranging from the system level down to that of logic gates, for design entry, documentation, and verification purposes
 * [Xilinx Vivado](https://www.xilinx.com/support/download.html) - Vivado Design Suite is a software suite produced by Xilinx for synthesis and analysis of HDL design
 
+### Project Overview 
+[Please see README for Overview](https://github.com/arnavtolat/Midi-Keyboard-VHDL/blob/22cc481082bb61794425cf64bf8b394caf01a1cf/README.md)
 
 ## Theory of Operation
 
