@@ -3,7 +3,7 @@
 
 Project Overview 
 * This project contains the source code which allows for a fully-functional, polyphonic MIDI keyboard connected to an FPGA with an audio output. 
-* The appendices.pdf contains block diagrams of the logic and state diagrams which served as the logical basis for the VHDL written. 
+* The appendices.pdf contains block diagrams of the logic and state diagrams which served as the logical basis for the VHDL written. All references to the appendix refer to labeled figures in this file. 
 * This project was implemented on a Basys3 FPGA in Xilinx Vivado 2018
 
 ### Built With
