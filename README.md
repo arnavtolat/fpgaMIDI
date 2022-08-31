@@ -1,40 +1,83 @@
 <!-- ABOUT THE PROJECT -->
-## Project Introduction and Rationale
+## About The Project: FPGA MIDI Controller
 
-The FiveThirtyEight Article [“College Students Aren’t The Only Ones Abusing Adderall”](https://fivethirtyeight.com/features/college-students-arent-the-only-ones-abusing-adderall/) notes that there is a need to better understand to the risk factors behind recreational stimulant use and abuse among college students. One of the key findings of the FiveThirtyEight analysis was that students at more selective institutions are more likely to report that the non-prescription use of stimulants as study drugs was popular on campus, making the opportunity to understand the extent to which this FiveThirtyEight claim regarding non-prescription stimulant use at selective institutions replicates at Dartmouth intriguing. 
-
-The project sought to identify specific demographic risk factors that may induce a Dartmouth student to abuse stimulants. This question was addressed by a number of methods, including a linear regression with multiple predictors and regression analyses of individual risk factors which appear to be of greatest importance in the broader analysis. By digging deeper and building the models described in the methods, our project transforms a topic of frequent casual discussion with an immense impact on student lives into actionable insights for those involved in student wellbeing. 
-
-## Methods
-
-### Data Collection
-
-The project’s method of data collection was through the use of an anonymous survey. The survey asked for the following demographic information: class year, race, sex, ethnicity, LGBTQIA+ identification, FGLI identification, major identification, Greek affiliation, and varsity athletic status. The race and major identification categories allowed respondents to choose multiple categories, while the rest required students to choose either yes/no or a single category. Furthermore, the survey asked the two core questions underlying the analyses: whether respondents used stimulants that were not prescribed to them in the past 6 months, and whether respondents believed the non-prescription use of stimulants as "study drugs" is popular on campus. Both of these questions were binary, yes/no questions, which follows the methodology of the survey conducted by FiveThirtyEight. Finally, the survey had an optional open-ended asking for student input for the Student Wellness center or campus leadership, in support of the project’s vision of providing actionable insight for key stakeholders in student wellbeing.  
-
-### Data Analysis
-**The logistic regression methodology was as follows:**
-   1. Constructing a logistic regression model on multiple predictors
-   2. Looking at the specific categorical factors with the seemingly greatest correlation with stimulant use and belief in stimulant use, running two logistic regressions with just this predictor and both stimulant use and belief in stimulant use to further discern whether the data point had an effect 
-   3. For each of these categorical features of interest, we ran two logistic regressions with just this predictor and both stimulant use and belief in stimulant use to further discern whether the data point had an effect 
-
-This methodology mirrors that of the analyses of categorical variables conducted by the authors of the original FiveThirtyEight analysis. For instance, the authors of the FiveThirtyEight analysis created binary categorical variables for suicidal ideation among respondents (a variable titled “seriously_thought_about_killing_oneself_last_year”) and then ran a logistic regression on it against their binary stimulant use and stimulant belief variables, just as this analysis does for a multitude of categorical predictors. 
-
-**Applying data simulations to understand population effect sizes given the small survey sample size: **
-
-Considering that the sample size was too small to discern whether the correlations  observed were statistically significant, the methodology also included a number of simulations of data which assisted in understanding the effects observed, particularly with regard to the potential for these effects to be statistically significant if observed at larger sample sizes. The goal of these methods was to understand a necessary sample size for observing a statistically significant correlation between the categorical predictors we included with largest effect and stimulant use or belief. 
-
-1. First, using the properties of Bernoulli random variables, I estimated the standard error associated with the observed effect size of Greek life on stimulant use and belief in stimulant popularity. In order to run this estimation of standard error using properties of Bernoulli random variables, it was necessary to obtain estimates of the *q1* and *q0* parameters by putting the data into groups where x=1 and x=0, to then estimated the *q*s from the fractions of the data in each group as an estimate of effect size. 
-2. The second simulation-based method for understanding whether the correlations observed were statistically significant was through generating simulated data for stimulant use and fitting a logistic regression to it, by splitting generated data points by class year and Greek affiliation, and then using the fractions of each group which used stimulants or believed stimulant use was popular to randomly assign a binary value to each. Then, plotting the standard error of the slope and p-value of the slope versus the sample size from the fitted logistic regression allowed stronger understadning of the significance of the effect observed and helped discern a sample size necessary in future experiments which seek to replicate these methods if similar effect sizes are present. 
-
-## Results
-* In our multivariate logistic regression for stimulant use, there was a pseudo-R^2 of 0.45. Roughly speaking, this shows the logistic regression doesn't do a great job at explaining what fraction of the variation in 𝑦 values is explained by the predictors. 
-* 
-* It is also important to note that we don't have the usual notion of residuals in this case, as we are using logistic regression. Instead, we compare how likely it is to see the particular sequence of 𝑦 values under the model vs. how likely it would be to see them if the chance to get 𝑦=1 did not depend on 𝑥. Ideally speaking, this model is far from perfect, and tweaking our sampling techniques and having a larger sample size were primary ways to ensure a more precise model. Similar to the approach in the FiveThirtyEight article, after doing a logistic regression with multiple predictors, we performed logistic regressions with FGLI and Greek affiliation on the use of stimulants. We observe that FGLI status and Greek affiliation as predictors for stimulant use have a p-value below 0.05. However, we notice in both cases a standard error that is above 1. Meaning that if we were to expand our interval, say to 97.5% confidence, we wouldn't be so sure anymore that these predictors were significant, since the range of beta values when looking at the 97.5% CI will contain 0. While these predictors are intriguing, and helped give us more reason to believe that Greek affiliation would be positively correlated with stimulant use, our survey data is not enough to concretely make a statistically significant claim considering the standard error and p-values.
-We then ran logistic regressions similarly but using belief in stimulant usage as the response variable instead of actual stimulant usage. Interestingly, we found that the predictors for third-year students and Greek affiliation were the most significant, having a range that did not include 0 within the 95% confidence interval for the slope. However, we cannot say that these predictors have a statistically significant effect on the outcome due to analogous reasoning concerning the high standard errors. We then ran logistic regressions with one predictor on Greek affiliation and being a third-year, seeing similar results as we did in the larger model with several predictors. We find that the belief model does not do a great job at predicting the response variables considering a very low pseudo R^2 of 0.13. 
-Since our models were limited in their predictive power, especially considering the small sample size of our survey, we sought to use simulated data to understand the potential significance of similar effect size with larger sample sizes. In doing so, we can attempt to obtain an estimate of the sample size researchers may want to use when replicating similar experiments. Focusing on Greek affiliation as a predictor, we used the fraction of affiliated and unaffiliated respondents who used stimulants or believed in their popularity to generate simulated data. For our simulated data with these probabilities, we plotted the outcome of standard error and p values for both our response variables with simulated data. We observed the simulated standard error and p value as the sample size approaches the undergraduate population at Dartmouth. We observed that at approximately n=800, the p-value for both belief and usage approaches 0.000 and the standard error begins to slow down much more slowly. This is approximately ⅕ of the Dartmouth student population. It is important to note that p-value is limited as a measure of significance at large sample sizes considering the manner in which it is calculated. The results with the standard error of the predictor coefficient shrinking in addition to the p-value, however, combine to demonstrate that with a large enough n, observing similar results as in our survey with a small sample size may lead to statistically significant results.
-
+## Project Overview 
+* This project contains the source code which allows for a fully-functional, polyphonic MIDI keyboard connected to an FPGA with an audio output. 
+* The fpgaMIDI-appendices.pdf contains block diagrams of the logic and state diagrams which served as the logical basis for the VHDL code written. 
+* This project was implemented on the [Diligent Basys 3](https://digilent.com/shop/basys-3-artix-7-fpga-trainer-board-recommended-for-introductory-users/) board, which has an Artix-7 FPGA and functioned as a MIDI controller for the keyboard
+* Simulations and synthesis were completed in Xilinx Vivado 2018
 
 ## Built With
 
 * [VHDL](https://www.seas.upenn.edu/~ese171/vhdl/vhdl_primer.html) - The VHSIC Hardware Description Language is a hardware description language that can model the behavior and structure of digital systems at multiple levels of abstraction, ranging from the system level down to that of logic gates, for design entry, documentation, and verification purposes
+* [Xilinx Vivado](https://www.xilinx.com/support/download.html) - Vivado Design Suite is a software suite produced by Xilinx for synthesis and analysis of HDL design. 
 
+## Project Introduction
+
+The project seeks to create a system which accurately takes the digital inputs from a MIDI keyboard and successfully allows for monophonic and polyphonic sound output. More specifically, we create a system which can take in a three byte digital input from a MIDI keyboard, generated upon key-press and key-release on the keyboard, and use it to generate sine waves corresponding to the notes played. These sine waves, inputted and interpreted one at a time, create monophonic sound. Once summed and normalized, the sine waves generate polyphonic sound, allowing users of the system to play chords.
+
+## Specifications
+
+The system takes in input from a MIDI keyboard, and outputs the highest key which is pressed on the 7-segment display, along with the sound corresponding to the sine waves generated by the digital analog conversion of the input from the MIDI keyboard. For an annotated image of the system, see the appendices PDF.
+
+Inputs
+* System clock (default clock speed 100 MHz, downscaled to 24 MHz using the Vivado clock generator)
+* MIDI keyboard input, passed in through MIDI to Pmod adapter
+
+Outputs
+* 7-segment display output describing the key pressed, or in the event of multiple keys pressed at once, the highest frequency key which is pressed
+* Audio output to speaker connected to Pmod AMP2, passed through Pmod DA2 (digital-to-analog converter), Pmod DA2 to AMP2 adapter, and Pmod AMP2
+
+Timing and Clocking Information
+* Clock Speed: 24 MHz, chosen to allow adequate clock cycles for phase accumulation and polyphony with 88 notes over 7 octave intervals.
+* Sampling Rate: 48 kHz, chosen for easier arithmetic and to allow for high-quality audio output (default CD sampling rate is 44.1 kHz).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Operating Instructions
+
+In order to set up and run the circuit, one must complete the following steps. For an image of a correctly connected circuit, see appendices PDF:
+1. Turn on the Alesis Q25 MIDI keyboard and connect its MIDI output to the MIDI to Pmod adapter using a male-male MIDI cable. This will serve as the MIDI input to the Basys3 Artix-7 FPGA board
+  a. Plug the MIDI to Pmod adapter into the top row of the JB input of the Basys3.
+    i. On the block diagram, this allows for data input to the midi_iport
+2. Connect the Basys3 Artix-7 FPGA board to a computer using a MicroUSB cable,
+plugging the MicroUSB end into the Basys3 Artix-7 FPGA board and the USB end into the computer
+  a. Using Xilinx Vivado software, follow the prompts to auto-connect to hardware target to connect to the board.
+  b. Then, press the program hardware target to program the board with the designed system.
+3. Connect the speaker output to the Basys3 Artix-7 FPGA board as follows:
+  a. Connect the Pmod DA2 (digital-to-analog converter) to the top row of
+Basys3 port JA
+  b. Connect the Pmod DA2 to AMP2 adapter to the DA2
+  c. Connect the Pmod AMP2 to the DA2 to AMP2 adapter
+  d. Connect the speaker’s AUX input to the AUX port on the AMP2 adapter
+    i. The data output to a speaker connected to Pmod DA2 by way of the DA2 to AMP2 adapter and AMP2 is represented by v_out on the block diagram.
+
+If these instructions are followed correctly, the user should expect to hear a sound once a key is pressed on the MIDI keyboard. The user should also see the value of the key they are pressing on the Basys3’s 7-segment display. If the user pressed multiple keys at the same time, the user should expect to see the value of the highest key which they press, and expect to hear a polyphonic “chord” sound consisting of the sounds of the keys which they pressed in unison.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Further notes on this project's Theory of Operation
+[Notes on Theory of Operation](https://github.com/arnavtolat/Midi-Keyboard-VHDL/blob/8ed1f8e4c99e7acc957e1640ea124984225c5074/theoryOfOperation.md)
+
+<!-- LICENSE -->
+## License
+
+Distributed under the GNU Affero General Public License v3.0 License. See `LICENSE.txt` for more information, and contact me if you have any questions. 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: images/screenshot.png
